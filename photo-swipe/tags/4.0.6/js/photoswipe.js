@@ -5,7 +5,7 @@ jQuery(function($) {
 	});
 
 	var parseThumbnailElements = function(gallery, el) {
-		var elements = $(gallery).find('a[data-size]'),
+		var elements = $(gallery).find('a[data-size]').has('img'),
 			galleryItems = [],
 			index;
 
