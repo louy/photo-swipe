@@ -23,5 +23,4 @@ The PhotoSwipe library requires some special markup to be applied on images. Thi
 1. PhotoSwipe Website
 
 == Changelog ==
-= 1.0 =
-- Initial release.
+Same as the original PhotoSwipe.
