@@ -132,6 +132,12 @@ function photoswipe_save_post_callback( $matches ) {
 	return $before . $image_url . $after;
 }
 
+function photoswipe_kses_allow_attributes() {
+	global $allowedposttags;
+	$allowedposttags['a']['data-size'] = array();
+}
+add_action( 'init', 'photoswipe_kses_allow_attributes' );
+
 if( !function_exists('fjarrett_get_attachment_id_by_url') ) :
 /**
  * Return an ID of an attachment by searching the database with the file URL.
