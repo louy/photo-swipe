@@ -2,11 +2,11 @@
 /**
  * Plugin Name: PhotoSwipe
  * Description: PhotoSwipe javascript plugin for WordPress
- * Version: 4.0.7.1
+ * Version: 4.0.7.2
  * Author: Louy Alakkad
  * Author URI: http://l0uy.com/
  */
-define('PHOTOSWIPE_VERSION', '4.0.7.1');
+define('PHOTOSWIPE_VERSION', '4.0.7.2');
 
 function photoswipe_enqueue() {
 	if( is_singular() ) {
@@ -26,7 +26,7 @@ function photoswipe_enqueue() {
 		wp_enqueue_script(
 			'photoswipe',
 			plugin_dir_url( __FILE__ ) . 'js/photoswipe.js',
-			array('photoswipe-lib', 'photoswipe-ui-default'),
+			array('photoswipe-lib', 'photoswipe-ui-default', 'jquery'),
 			PHOTOSWIPE_VERSION
 		);
 
