@@ -25,5 +25,9 @@ The PhotoSwipe library requires some special markup to be applied on images. Thi
 == Changelog ==
 Same as the original PhotoSwipe. Except for the following.
 
+= 4.0.7.2 =
+* Fixed another bug in multisite & KSES.
+* Added jQuery as dependency.
+
 = 4.0.7.1 =
 * Fixed a bug in multisite.
