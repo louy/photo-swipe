@@ -11,13 +11,20 @@ jQuery(function($) {
 
 		elements.each(function(i) {
 			var $el = $(this),
-				size = $el.data('size').split('x');
+				size = $el.data('size').split('x'),
+				caption;
+
+			if( $el.next().is('.wp-caption-text') ) {
+				caption = $el.next().text();
+			} else {
+				caption = $el.attr('title');
+			}
 
 			galleryItems.push({
 				src: $el.attr('href'),
 				w: parseInt(size[0], 10),
 				h: parseInt(size[1], 10),
-				title: $el.attr('title'),
+				title: caption,
 				msrc: $el.find('img').attr('src'),
 				el: $el,
 			});
