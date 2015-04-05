@@ -1,4 +1,7 @@
 jQuery(function($) {
+	var PhotoSwipe = window.PhotoSwipe,
+		PhotoSwipeUI_Default = window.PhotoSwipeUI_Default;
+
 	$('body').on('click', 'a[data-size]', function(e) {
 		if( !PhotoSwipe || !PhotoSwipeUI_Default ) {
 			return;
@@ -30,14 +33,14 @@ jQuery(function($) {
 				h: parseInt(size[1], 10),
 				title: caption,
 				msrc: $el.find('img').attr('src'),
-				el: $el,
+				el: $el
 			});
 			if( el === $el.get(0) ) {
 				index = i;
 			}
 		});
 
-		return [galleryItems, parseInt(index)];
+		return [galleryItems, parseInt(index, 10)];
 	};
 
 	var openPhotoSwipe = function( element, disableAnimation ) {
@@ -45,7 +48,7 @@ jQuery(function($) {
 			galleryElement = $(element).parents('.gallery, .hentry, .main, body').first(),
 			gallery,
 			options,
-			items;
+			items, index;
 
 		items = parseThumbnailElements(galleryElement, element);
 		index = items[1];
