@@ -1,5 +1,9 @@
 jQuery(function($) {
 	$('body').on('click', 'a[data-size]', function(e) {
+		if( !PhotoSwipe || !PhotoSwipeUI_Default ) {
+			return;
+		}
+
 		e.preventDefault();
 		openPhotoSwipe( this );
 	});
